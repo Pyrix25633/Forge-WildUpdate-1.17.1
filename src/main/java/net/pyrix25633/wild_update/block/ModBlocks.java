@@ -5,7 +5,9 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fmllegacy.RegistryObject;
@@ -22,11 +24,11 @@ public class ModBlocks {
 
     // Blocks:
     public static final RegistryObject<Block> MUD_BRICKS = registerBlock("mud_bricks",
-            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(1.2f, 3f)
-                    .destroyTime(2f)));
+            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).strength(3f, 4f)
+                    .sound(SoundType.STONE)));
     public static final RegistryObject<Block> MUD_BLOCK = registerBlock("mud_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).strength(0.7f, 1f)
-                    .destroyTime(1.5f).speedFactor(0.9f).jumpFactor(0.8f)));
+            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).strength(0.7f, 1.1f)
+                    .sound(SoundType.ROOTED_DIRT).speedFactor(0.9f).jumpFactor(0.9f))); //try
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
