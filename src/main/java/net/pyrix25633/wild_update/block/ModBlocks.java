@@ -24,16 +24,16 @@ public class ModBlocks {
 
     // Blocks:
     public static final RegistryObject<Block> MUD_BRICKS = registerBlock("mud_bricks",
-            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).strength(1.8f, 4f)
+            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).strength(1.5f, 2f)
                     .sound(SoundType.STONE).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> MUD_BLOCK = registerBlock("mud_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).strength(0.7f, 1.1f)
+            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).strength(0.85f, 1f)
                     .sound(SoundType.ROOTED_DIRT).speedFactor(0.9f).jumpFactor(0.9f)));
     public static final RegistryObject<Block> SCULK_BLOCK = registerBlock("sculk_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.SCULK).strength(1f, 1f)
+            () -> new Block(BlockBehaviour.Properties.of(Material.SCULK).strength(1.5f, 0.8f)
                     .sound(SoundType.SCULK_SENSOR)));
     public static final RegistryObject<Block> SCULK_CATALIST = registerBlock("sculk_catalist",
-            () -> new Block(BlockBehaviour.Properties.of(Material.SCULK).strength(1f, 1f)
+            () -> new Block(BlockBehaviour.Properties.of(Material.SCULK).strength(1.5f, 0.8f)
                     .sound(SoundType.SCULK_SENSOR)));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
