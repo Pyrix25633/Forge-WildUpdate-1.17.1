@@ -7,6 +7,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -35,6 +36,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> SCULK_CATALIST = registerBlock("sculk_catalist",
             () -> new Block(BlockBehaviour.Properties.of(Material.SCULK).strength(1f, 0.8f)
                     .sound(SoundType.SCULK_SENSOR)));
+    public static final RegistryObject<Block> SCULK_SHRIEKER = registerBlock("sculk_shrieker",
+            () -> new Block(BlockBehaviour.Properties.of(Material.SCULK).strength(1f, 0.8f)
+                    .sound(SoundType.SCULK_SENSOR).noOcclusion()));
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
