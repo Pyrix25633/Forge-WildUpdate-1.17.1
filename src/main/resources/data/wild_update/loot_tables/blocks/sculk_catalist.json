@@ -5,18 +5,36 @@
       "rolls": 1,
       "entries": [
         {
-          "type": "minecraft:item",
-          "name": "wild_update:sculk_catalist",
-          "conditions": [
+          "type": "minecraft:alternatives",
+          "children": [
             {
-              "condition": "minecraft:match_tool",
-              "predicate": {
-                "enchantments": [
-                  {
-                    "enchantment": "minecraft:silk_touch"
+              "type": "minecraft:item",
+              "name": "wild_update:sculk_catalist",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "enchantments": [
+                      {
+                        "enchantment": "minecraft:silk_touch"
+                      }
+                    ]
                   }
-                ]
-              }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "minecraft:experience_bottle",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": {
+                    "min": 2,
+                    "max": 5
+                  }
+                }
+              ]
             }
           ]
         }
